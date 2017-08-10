@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:id="@+id/dialog_rootView">
+
+	<RelativeLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_centerInParent="true"
+		android:background="@drawable/dialog_background"
+		android:padding="35dp"
+		android:id="@+id/dialog_mainView">
+
+		<RelativeLayout
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content">
+
+			<GridLayout
+				columnCount="1"
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				rowCount="1"
+				android:alignmentMode="alignMargins"
+				android:columnCount="4">
+
+				<ImageView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:src="@drawable/ff000000"
+					android:layout_margin="5dp"/>
+
+				<ImageView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:src="@drawable/ffffffff"
+					android:layout_margin="5dp"/>
+
+				<ImageView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:src="@drawable/ff057197"
+					android:layout_margin="5dp"/>
+
+				<ImageView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:src="@drawable/ff2e8faf"
+					android:layout_margin="5dp"/>
+
+			</GridLayout>
+
+		</RelativeLayout>
+
+	</RelativeLayout>
+
+</RelativeLayout>
+

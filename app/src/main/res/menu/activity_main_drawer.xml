@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+	<item android:title="_(:з」∠)_">
+        <menu>
+			<item
+				android:id="@+id/nav_login"
+				android:icon="@drawable/ic_public_black_48dp"
+				android:title="登录bilibili♡" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_location_city_black_48dp"
+                android:title="教程" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_osu"
+                android:title="ppy?osu？| ू•ૅω•́)ᵎᵎᵎ" />
+        </menu>
+    </item>
+</menu>

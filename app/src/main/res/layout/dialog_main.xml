@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:background="@color/material_field_gary"
+	android:id="@+id/dialogRootView">
+
+	<RelativeLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_centerInParent="true"
+		android:background="@drawable/dialog_background"
+		android:padding="30dp"
+		android:id="@+id/dialogMainView"
+		android:gravity="bottom">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="title:textinputName"
+			android:layout_width="wrap_content"
+			style="@style/TextView_Blue"
+			android:id="@+id/dialogTitle"
+			android:layout_marginBottom="5dp"
+			android:maxWidth="210dp"/>
+
+		<RelativeLayout
+			android:layout_below="@id/dialogTitle"
+			android:layout_height="wrap_content"
+			android:layout_width="220dp"
+			android:id="@+id/dialogContainer"
+			android:minHeight="20dp"
+			android:minWidth="200dp"
+			android:layout_marginBottom="10dp">
+
+		</RelativeLayout>
+
+		<LinearLayout
+			android:layout_below="@id/dialogContainer"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/dialogExtraLayout"
+			android:layout_alignRight="@id/dialogContainer"
+			android:layout_alignLeft="@id/dialogContainer"
+			android:gravity="top|left"/>
+
+		<View
+			android:layout_height="1dp"
+			android:layout_width="wrap_content"
+			android:layout_below="@id/dialogTitle"
+			android:layout_alignRight="@id/dialogContainer"
+			android:background="@color/material_field_gary_blue"
+			android:alpha="0.05"
+			android:id="@+id/dialogDivider"/>
+
+		<LinearLayout
+			android:layout_height="30dp"
+			android:layout_width="wrap_content"
+			android:orientation="horizontal"
+			android:layout_below="@id/dialogExtraLayout"
+			android:layout_alignRight="@id/dialogContainer"
+			android:id="@+id/dialogButtonField"
+			android:gravity="right|center"
+			android:layout_marginBottom="2dp">
+
+			<com.gc.materialdesign.views.ButtonFlat
+				android:id="@+id/dialogAcceptB"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="确定"/>
+
+			<com.gc.materialdesign.views.ButtonFlat
+				android:id="@+id/dialogCancelB"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="取消"/>
+
+		</LinearLayout>
+
+		<View
+			android:layout_height="1dp"
+			android:background="@color/material_field_gary_blue"
+			android:layout_width="match_parent"
+			android:layout_above="@id/dialogButtonField"
+			android:layout_alignRight="@id/dialogContainer"
+			android:alpha="0.3"
+			android:layout_alignLeft="@id/dialogButtonField"/>
+
+	</RelativeLayout>
+
+</RelativeLayout>
+

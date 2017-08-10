@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	
+	
+	<item android:title="_(:з」∠)_">
+        <menu>
+			<item
+				android:id="@+id/nav_login"
+				android:icon="@drawable/ic_public_black_48dp"
+				android:title="登录bilibili♡" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+	
+	
+    <group android:checkableBehavior="single">
+        
+    </group>
+	
+	<item android:title="取色版">
+		<group android:checkableBehavior="single"
+			android:id="@+id/color_selecter">
+			<item
+				android:id="@+id/colors_ff000000"
+				android:icon="@drawable/ff000000"
+				android:title="#000000" />
+			<item
+				android:id="@+id/colors_ffffffff"
+				android:icon="@drawable/ffffffff"
+				android:title="#FFFFFF" />
+			<item
+				android:id="@+id/colors_fffcde6b"
+				android:icon="@drawable/fffcde6b"
+				android:title="#FCDE6B" />
+			<item
+				android:id="@+id/colors_fffff6d1"
+				android:icon="@drawable/fffff6d1"
+				android:title="#FFF6D1" />
+			<item
+				android:id="@+id/colors_ff7d9591"
+				android:icon="@drawable/ff7d9591"
+				android:title="#7D9591" />
+			<item
+				android:id="@+id/colors_ff71bed6"
+				android:icon="@drawable/ff71bed6"
+				android:title="#71BED6" />
+			
+			
+			<item
+				android:id="@+id/colors_ff3be5db"
+				android:icon="@drawable/ff3be5db"
+				android:title="#3BE5DB" />
+			<item
+				android:id="@+id/colors_fffed3c7"
+				android:icon="@drawable/fffed3c7"
+				android:title="#FED3C7" />
+			<item
+				android:id="@+id/colors_ffb83f27"
+				android:icon="@drawable/ffb83f27"
+				android:title="#B83F27" />
+			<item
+				android:id="@+id/colors_fffaac8e"
+				android:icon="@drawable/fffaac8e"
+				android:title="#FAAC8E" />
+			<item
+				android:id="@+id/colors_ff004670"
+				android:icon="@drawable/ff004670"
+				android:title="#004670" />
+			<item
+				android:id="@+id/colors_ff057197"
+				android:icon="@drawable/ff057197"
+				android:title="#057197" />
+			
+			
+			
+			<item
+				android:id="@+id/colors_ff44c95f"
+				android:icon="@drawable/ff44c95f"
+				android:title="#44C95F" />
+			<item
+				android:id="@+id/colors_ff7754ff"
+				android:icon="@drawable/ff7754ff"
+				android:title="#7754FF" />
+			<item
+				android:id="@+id/colors_ffff0000"
+				android:icon="@drawable/ffff0000"
+				android:title="#FF0000" />
+			<item
+				android:id="@+id/colors_ffff9800"
+				android:icon="@drawable/ffff9800"
+				android:title="#FF9800" />
+			<item
+				android:id="@+id/colors_ff97fddc"
+				android:icon="@drawable/ff97fddc"
+				android:title="#97FDDC" />
+			<item
+				android:id="@+id/colors_fff8cb8c"
+				android:icon="@drawable/fff8cb8c"
+				android:title="#F8CB8C" />
+			
+			<item
+				android:id="@+id/colors_ff2e8faf"
+				android:icon="@drawable/ff2e8faf"
+				android:title="#2E8FAF" />
+			
+			
+		</group>
+	</item>
+
+    
+
+</menu>

@@ -8,8 +8,8 @@ android {
         applicationId "com.edplan.bilipixeldraw"
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.1"
     }
     buildTypes {
         release {
@@ -20,5 +20,7 @@ android {
 }
 
 dependencies {
+	compile 'com.android.support:cardview-v7:+'
+	compile project(':libs:AgentWeb-master:library')
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }

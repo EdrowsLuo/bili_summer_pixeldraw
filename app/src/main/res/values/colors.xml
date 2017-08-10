@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#40CCDF</color>
+    <color name="colorPrimaryDark">#1096FF</color>
+    <color name="colorAccent">#3090AA</color>
+	
+
+	<color name="beatmapmanuEntry_background">#B0EAF8</color>
+	<color name="beatmapmanuEntry_datacard">#9979C4F8</color>
+	<color name="beatmapmanuEntry_moreButton">#43CFF4</color>
+	<color name="beatmapmanuEntry_titleColor">#88070707</color>
+	<color name="beatmapmanuEntry_dataTextColor">#77171717</color>
+
+	<color name="material_blue_light">#99B0EAF8</color>
+	<color name="material_blue_dark">#AAA9D4FF</color>
+	<color name="material_text_light">#EEFEFEFE</color>
+	<color name="material_text_dark">#77070707</color>
+	<color name="material_text_light_blue">#1E88E5</color>
+	<color name="material_text_dark_blue">#A9D4FF</color>
+
+	<color name="material_field_gary_blue">#DDB1E3FE</color>
+	<color name="material_field_gary">#55000000</color>
+
+	<color name="material_prime_blue">#268CF1</color>
+	<color name="material_prime_blue_light">#CBE9F1</color>
+	<color name="material_prime_white">#FDFDFD</color>
+	
+	
+	
+</resources>
+

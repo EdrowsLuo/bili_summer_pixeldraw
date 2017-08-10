@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">夏日绘版(⑉°з°)-♡</string>
+	<string name="web_name">登录</string>
+	
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="app_name">summer_pixeldraw</string>
-    <string name="hello_world">Hello world!</string>
-
+    <string name="action_settings">Settings</string>
 </resources>
