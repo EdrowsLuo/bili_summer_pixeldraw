@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 		
 		colorSelecter=(LayerDrawView) findViewById(R.id.colorSelecter);
 		
-		cfl=new ColorFieldLayer();
+		cfl=new ColorFieldLayer(6,6);
 		colorSelecter.addLayer(cfl);
 		for(int i=0;i<BiliBitmapParser.colors.length;i++){
 			cfl.addColor(BiliBitmapParser.colors[i]);

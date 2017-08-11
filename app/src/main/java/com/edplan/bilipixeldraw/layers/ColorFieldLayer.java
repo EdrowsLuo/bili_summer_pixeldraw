@@ -15,11 +15,12 @@ public class ColorFieldLayer extends BitmapPartLayer
 	public int cCount=6;
 	public OnColorSelectListener l; 
 	
-	public ColorFieldLayer(){
+	public ColorFieldLayer(int x,int y){
 		this.setEnableZoom(false);
 		this.setEnablePositionText(false);
 		colorList=new ArrayList<Integer>();
-		Bitmap colorMap=Bitmap.createBitmap(cCount,4,Bitmap.Config.ARGB_8888);
+		cCount=x;
+		Bitmap colorMap=Bitmap.createBitmap(x,y,Bitmap.Config.ARGB_8888);
 		this.setBitmap(colorMap);
 		this.getNetPaint().setStrokeWidth(StaticM.dip2px(10f));
 		this.getNetPaint().setARGB(250,250,250,250);

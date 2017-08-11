@@ -9,6 +9,47 @@ public class BiliBitmapParser
 	public static final int[] colors=new int[]{
 		0xFF000000,
 		0xFFFFFFFF,
+		0xFFAAAAAA,
+		0xFF555555,
+		0xFFFED3C7,
+		0xFFFFC4CE,
+		
+		0xFFFAAC8E,
+		0xFFFF8B83,
+		0xFFF44336,
+		0xFFE91E63,
+		0xFFE2669E,
+		0xFF9C27B0,
+		
+		0xFF673AB7,
+		0xFF3F51B5,
+		0xFF004670,
+		0xFF057197,
+		0xFF2196F3,
+		0xFF00BCD4,
+		
+		0xFF3BE5DB,
+		0xFF97FDDC,
+		0xFF167300,
+		0xFF37A93C,
+		0xFF89E642,
+		0xFFD7FF07,
+		
+		0xFFFFF6D1,
+		0xFFF8CB8C,
+		0xFFFFEB3B,
+		0xFFFFC107,
+		0xFFFF9800,
+		0xFFFF5722,
+		
+		0xFFB83F27,
+		0xFF795548
+	};
+	
+	
+	public static final int[] colors2=new int[]{
+		0xFF000000,
+		0xFFFFFFFF,
 		0xFFFCDE6B,
 		0xFFFFF6D1,
 		
@@ -112,15 +153,36 @@ public class BiliBitmapParser
 		return x+1280*y;
 	}
 	
+	public static int getIndex(int color){
+		for(int i=0;i<colors.length;i++){
+			if(colors[i]==color){
+				return i;
+			}
+		}
+		return 0;
+	}
+	
 	public static char getChar(int color){
-		switch(color){
-			case 0x00000000:
+		
+		int i=getIndex(color);
+		
+		if(i==-1){
+			return '0';
+		}else if(i<10){
+			return (char)(48+i);
+		}else{
+			return (char)(55+i);
+		}
+		
+		/*
+		switch(getIndex(color)){
+			case 0:
 				return '0';
-			case 0xFFFFFFFF:
+			case 1:
 				return '1';
-			case 0xFFFCDE6B:
+			case 2:
 				return '2';
-			case 0xFFFFF6D1:
+			case 3:
 				return '3';
 			case 0xFF7D9591:
 				return '4';
@@ -156,10 +218,21 @@ public class BiliBitmapParser
 				return 'I';
 			default:
 				return '0';
-		}
+		}*/
 	}
 	
 	public static int parseColor(char c){
+		
+		byte b=(byte)c;
+		if(b>=48&&b<=57){
+			return colors[b-48];
+		}else if(b>=65&&b<=90){
+			return colors[b-55];
+		}else{
+			return colors[0];
+		}
+		
+		/*
 		switch(c){
 			case '0':
 				return colors[0];
@@ -203,7 +276,7 @@ public class BiliBitmapParser
 				return colors[18];
 			default:
 				return colors[0];
-		}
+		}*/
 	}
 	
 }
