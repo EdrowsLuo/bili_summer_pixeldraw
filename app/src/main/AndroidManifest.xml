@@ -18,6 +18,18 @@
             </intent-filter>
         </activity>
 		
+		<activity 
+			android:name=".PixelActivity"
+			android:label="夏日绘版 网格化查看"
+			android:theme="@style/AppTheme.NoActionBar">
+			<intent-filter >
+				<action android:name="android.intent.action.VIEW"/>
+					
+				<category android:name="android.intent.category.DEFAULT"/>
+				<data android:mimeType="image/*" android:scheme="file"/>
+			</intent-filter>
+		</activity>
+		
 		<activity
             android:name=".WebActivity"
             android:label="@string/web_name" >
