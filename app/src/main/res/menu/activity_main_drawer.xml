@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+	
 
 	<item android:title="_(:з」∠)_">
         <menu>
@@ -12,10 +13,28 @@
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_location_city_black_48dp"
                 android:title="教程" />
+			<item
+                android:id="@+id/nav_save"
+                android:icon="@drawable/ic_system_update_alt_black_48dp"
+                android:title="保存绘版到本地 (ง •̀_•́)ง" />
+			
+			<item
+                android:id="@+id/nav_clip"
+                android:icon="@drawable/ic_system_update_alt_black_48dp"
+                android:title="裁剪部分画板 (┑･ω･)┒" />
+			
+			
+			
+			<item
+                android:id="@+id/nav_addmodel"
+                android:icon="@drawable/ic_photo_size_select_large_black_48dp"
+                android:title="设置模板 (｢･ω･)｢嘿" />
+			
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_osu"
                 android:title="ppy?osu？| ू•ૅω•́)ᵎᵎᵎ" />
+			
         </menu>
     </item>
 </menu>

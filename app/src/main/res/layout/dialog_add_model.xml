@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content"
+	android:layout_width="match_parent"
+	android:layout_margin="15dp">
+
+	<EditText
+		android:inputType="number"
+		android:layout_width="match_parent"
+		android:ems="10"
+		android:layout_height="wrap_content"
+		android:id="@+id/dialog_addmodel_x"
+		android:layout_margin="5dp"
+		android:hint="x"/>
+
+	<EditText
+		android:inputType="number"
+		android:layout_width="match_parent"
+		android:ems="10"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/dialog_addmodel_x"
+		android:layout_margin="5dp"
+		android:hint="y"
+		android:id="@+id/dialog_addmodel_y"/>
+
+	<EditText
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:ems="10"
+		android:layout_below="@id/dialog_addmodel_y"
+		android:hint="图片文件路径"
+		android:layout_margin="5dp"
+		android:id="@+id/dialog_addmodel_path"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:layout_below="@id/dialog_addmodel_path"
+		android:layout_margin="5dp"
+		android:gravity="right|center"
+		android:id="@+id/dialogaddmodelLinearLayout1">
+
+		<Button
+			style="?android:attr/buttonBarButtonStyle"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="确定"
+			android:id="@+id/dialog_addmodel_sureButton"/>
+
+	</LinearLayout>
+
+	<View
+		android:background="?android:attr/dividerVertical"
+		android:layout_height="1dp"
+		android:layout_width="match_parent"
+		android:layout_above="@id/dialogaddmodelLinearLayout1"/>
+
+</RelativeLayout>
+

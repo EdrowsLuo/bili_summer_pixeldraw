@@ -15,7 +15,7 @@ public class BiliJsonGetter
 	
 	public static String urlString="http://api.live.bilibili.com/activity/v1/SummerDraw/bitmap";
 	
-	public static String getJsonString() throws IOException{
+	public static String getJsonString() throws Exception{
 		if(flag==Flag.Getting)return null;
 		flag=Flag.Getting;
 		try
@@ -34,10 +34,11 @@ public class BiliJsonGetter
 			flag=Flag.Waiting;
 			return sb.toString();
 		}
-		catch (MalformedURLException e)
+		catch (Exception e)
 		{
 			flag=Flag.Waiting;
-			return null;
+			Log.e("parse",e.getMessage(),e);
+			throw e;
 		}
 	}
 	

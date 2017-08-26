@@ -89,7 +89,7 @@ public class BiliBitmapParser
 	
 	public void update(){
 		if(isLoading){
-			StaticM.makeSnakeBar("正在更新中，不要重复点击",null);
+			StaticM.makeSnakeBar("正在更新中，不要重复点击");
 		}else{
 			Thread loadThread=new Thread(){
 				@Override
@@ -99,27 +99,23 @@ public class BiliBitmapParser
 						String s=BiliJsonGetter.getJsonString();
 						String j=BiliJsonGetter.parseJson(s);
 						if(j==null){
-							StaticM.makeSnakeBar("更新画板失败 "+"null point",null);
-							return;
+							StaticM.makeSnakeBar("更新画板失败 "+"null point");
+						}else{
+							parse(j);
+							StaticM.makeSnakeBar("更新画板完成");
 						}
-						parse(j);
-						StaticM.makeSnakeBar("更新画板完成",null);
 					}
-					catch (IOException e)
+					catch (Exception e)
 					{
 						LogUtil.logErr(e);
-						StaticM.makeSnakeBar("更新画板失败 "+e.getMessage(),null);
+						StaticM.makeSnakeBar("更新画板失败 "+e.getMessage());
 					}
-					catch(JSONException e)
-					{
-						LogUtil.logErr(e);
-						StaticM.makeSnakeBar("更新画板失败 "+e.getMessage(),null);
-					}
+					
 					isLoading=false;
 				}
 			};
 			loadThread.start();
-			StaticM.makeSnakeBar("开始更新(ง •̀_•́)ง",null);
+			StaticM.makeSnakeBar("开始更新(ง •̀_•́)ง");
 			isLoading=true;
 			loadingThread=loadThread;
 		}
@@ -127,19 +123,26 @@ public class BiliBitmapParser
 	
 	
 	public void parse(String res){
-		int count=0;
+		//int count=0;
 		char c;
 		for(int i=0;i<res.length();i++){
-			if((c=res.charAt(i))!=chars[i]){
-				if(c!='0')count++;
+			c=res.charAt(i);
+			//if((c=res.charAt(i))!=chars[i]){
+			//	if(c!='0')count++;
 				chars[i]=c;
-				bitmap.setPixel(getX(i),getY(i),parseColor(c));
-			}
+				setPixel(getX(i),getY(i),c);
+			//}
 		}
 		
-		Log.v("recode","count : "+count);
+		//Log.v("recode","count : "+count);
 		//StaticM.toast("已经有"+count+"个像素点了(⑉°з°)-♡");
 	}
+	
+	public void setPixel(int x,int y,char c){
+		bitmap.setPixel(x,y,parseColor(c));
+	}
+	
+	
 	
 	public int getX(int i){
 		return i%1280;

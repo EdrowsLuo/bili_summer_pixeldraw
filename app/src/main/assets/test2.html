@@ -1,0 +1,100 @@
+<html>
+	<head>
+	    <script src="http://static.hdslb.com/live-static/libs/jquery/jquery-1.11.3.min.js"></script>
+		<script src="https://greasyfork.org/scripts/22837-text-to-link-mod/code/Text To link mod.user.js"></script>
+		<script type="text/javascript">
+			function displaymessage()
+			{
+			  jscallback.callBack("111");
+			  connect();
+			}
+			decoder=new window.TextDecoder;
+        encoder=new window.TextEncoder;
+			
+		heartBeat=function(){
+	        var t = new ArrayBuffer(16),
+            e = new DataView(t, 0);
+            e.setInt32(0, 16),
+            e.setInt16(4, 16),
+            e.setInt16(6, 1),
+            e.setInt32(8, 2),
+            e.setInt32(12, 1);
+            ws.send(t);
+	        console.log("BEAT");
+        };
+        function merge(a,b){
+	        var n = new Uint8Array(a),i = new Uint8Array(b),newa = new Uint8Array(a.byteLength + b.byteLength);
+	        newa.set(n,0);
+	        newa.set(i, a.byteLength)
+            return newa.buffer;
+        }
+        connect=function(){
+        ws = new WebSocket("ws://broadcastlv.chat.bilibili.com:2244/sub");
+        ws.onopen = function()
+        {
+		  ws.binaryType = "arraybuffer";
+		  var firstdata=encoder.encode(JSON.stringify({uid:0,roomid:5446}));
+		  buf = new ArrayBuffer(16);
+          view = new DataView(buf, 0);
+          view.setInt32(0, 16 + firstdata.byteLength);
+          view.setInt16(4, 16);
+          view.setInt16(6, 1);
+          view.setInt32(8, 7);
+          view.setInt32(12, 1);
+          ws.send(merge(buf,firstdata));
+      };
+
+  ws.onmessage=function(evt)
+	{
+		var e = evt.data,
+        n = new DataView(e, 0),
+        a = n.getInt32(0),
+        s = n.getInt16(4),
+        o = n.getInt32(8);
+        switch (o) {
+        case 8:
+            heartBeat(),
+            clock = setInterval(heartBeat, 30000);
+			jscallback.callBack("heartBeat");
+            break;
+        case 5:
+            for (var r, l = n,u = e,g = 0; g < u.byteLength; g += a){
+				a = l.getInt32(g),
+            s = l.getInt16(g + 4),
+            r = decoder.decode(u.slice(g + s, g + a));
+				data=JSON.parse(r);
+				if ("DRAW_UPDATE" === data.cmd) {
+                    var dt = data.data;
+					jscallback.callBack(dt.x_min+" "+dt.y_min+" "+dt.color);
+					/*if(Math.abs(dt.x_max-dt.x_min)>0||Math.abs(dt.y_max-dt.y_min)>0){
+						
+					}*/
+					//Fill(imagedata,dt.color,dt.x_min,dt.y_min,Math.abs(dt.x_max-dt.x_min)+1,Math.abs(dt.y_max-dt.y_min),1);
+					//refreshCav(dt.x_min,dt.y_min);
+					//addnewAnime(new doingAnime(dt.x_min,dt.y_min,dt.color));
+                }
+			}
+        }
+	};
+    ws.onclose=function(){
+	    //clock && clearInterval(clock);
+	    connect();
+	    console.log("重连..");
+		jscallback.callBack("reload");
+    };
+	
+};
+
+connect();
+
+			
+			
+		</script>
+	</head>
+
+	<body>
+		<form>
+			<input type="button" value="Click me!" onclick="displaymessage()" />
+		</form>
+	</body>
+</html>

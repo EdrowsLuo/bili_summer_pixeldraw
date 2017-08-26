@@ -25,7 +25,7 @@
 			<intent-filter >
 				<action android:name="android.intent.action.VIEW"/>
 					
-				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
 				<data android:mimeType="image/*" android:scheme="file"/>
 			</intent-filter>
 		</activity>
@@ -50,15 +50,23 @@
             </intent-filter>
         </activity>
 		
+		<activity
+            android:name=".FinalActivity"
+            android:label="完结撒花🌸" >
+            <intent-filter>
+				<action android:name="com.edplan.final" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 		
     </application>
 
 	
 	                        	
-<uses-permission android:name="android.permission.INTERNET"/>
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 </manifest>

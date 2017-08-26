@@ -95,6 +95,24 @@
 
 			</RelativeLayout>
 
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="改动像素：19000"
+				android:layout_below="@id/timerLayout"
+				android:layout_alignLeft="@id/timerLayout"
+				android:id="@+id/changeCounter"
+				android:textSize="9sp"
+				android:textStyle="bold"
+				android:shadowColor="#DCDCDC"
+				android:shadowRadius="5"
+				android:layout_margin="10dp"
+				android:layout_marginTop="20dp"
+				android:textColor="#F0F0F0"/>
+			
+			
+			
 			<View
 				android:background="?android:attr/dividerVertical"
 				android:layout_height="9dp"
@@ -107,6 +125,13 @@
 				android:layout_gravity="bottom|end"
 				android:layout_alignParentBottom="true"
 				android:layout_alignParentRight="true">
+
+				<android.support.design.widget.FloatingActionButton
+					android:id="@+id/fab_show_model"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_margin="@dimen/fab_margin"
+					app:srcCompat="@drawable/ic_visibility_white_48dp"/>
 
 				<android.support.design.widget.FloatingActionButton
 					android:id="@+id/fab_draw"

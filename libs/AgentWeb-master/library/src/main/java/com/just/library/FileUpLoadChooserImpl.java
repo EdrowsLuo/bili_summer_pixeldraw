@@ -69,7 +69,7 @@ public class FileUpLoadChooserImpl implements IFileUploadChooser {
     @Override
     public void fetchFilePathFromIntent(int requestCode, int resultCode, Intent data) {
 
-        Log.i("Info", "request:" + requestCode + "  result:" + resultCode + "  data:" + data);
+        //Log.i("Info", "request:" + requestCode + "  result:" + resultCode + "  data:" + data);
         if (REQUEST_CODE != requestCode)
             return;
 

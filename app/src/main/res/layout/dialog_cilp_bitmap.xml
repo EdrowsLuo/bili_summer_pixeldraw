@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content"
+	android:layout_width="match_parent">
+
+	<GridLayout
+		columnCount="1"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		rowCount="1"
+		android:columnCount="1"
+		android:id="@+id/dialogcilpbitmapGridLayout1">
+
+		<EditText
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:ems="10"
+			android:inputType="number"
+			android:hint="x1"
+			android:id="@+id/dialog_x1"/>
+
+		<EditText
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:ems="10"
+			android:inputType="number"
+			android:hint="y1"
+			android:id="@+id/dialog_y1"/>
+
+		<EditText
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:ems="10"
+			android:inputType="number"
+			android:hint="x2"
+			android:id="@+id/dialog_x2"/>
+
+		<EditText
+			android:inputType="number"
+			android:layout_width="wrap_content"
+			android:ems="10"
+			android:layout_height="wrap_content"
+			android:hint="y2"
+			android:id="@+id/dialog_y2"/>
+
+	</GridLayout>
+
+	<Button
+		style="?android:attr/buttonBarButtonStyle"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="确定"
+		android:layout_below="@id/dialogcilpbitmapGridLayout1"
+		android:layout_alignParentRight="true"
+		android:id="@+id/dialog_clipbitmap_sureButton"/>
+
+</RelativeLayout>
+
