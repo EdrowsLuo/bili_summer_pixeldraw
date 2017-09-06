@@ -82,6 +82,8 @@ public class BiliBitmapParser
 	//1280*720 p
 	public Bitmap bitmap;
 	
+	public OnChangeListener l;
+	
 	public BiliBitmapParser(){
 		chars=new char[1280*720];
 		bitmap=Bitmap.createBitmap(1280,720,Bitmap.Config.ARGB_8888);
@@ -134,15 +136,26 @@ public class BiliBitmapParser
 			//}
 		}
 		
+		if(l!=null){
+			l.onChange(-1,-1,'0',true);
+		}
+		
 		//Log.v("recode","count : "+count);
 		//StaticM.toast("已经有"+count+"个像素点了(⑉°з°)-♡");
 	}
 	
-	public void setPixel(int x,int y,char c){
+	public void setPixel(int x,int y,char c,boolean callBack){
 		bitmap.setPixel(x,y,parseColor(c));
+		if(callBack){
+			if(l!=null){
+				l.onChange(x,y,c,x==-1);
+			}
+		}
 	}
 	
-	
+	public void setPixel(int x,int y,char c){
+		setPixel(x,y,c,true);
+	}
 	
 	public int getX(int i){
 		return i%1280;
@@ -280,6 +293,11 @@ public class BiliBitmapParser
 			default:
 				return colors[0];
 		}*/
+	}
+	
+	
+	public interface OnChangeListener{
+		public void onChange(int x,int y,char c,boolean isAll);
 	}
 	
 }

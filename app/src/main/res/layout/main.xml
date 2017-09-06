@@ -95,7 +95,6 @@
 
 			</RelativeLayout>
 
-
 			<TextView
 				android:layout_height="wrap_content"
 				android:layout_width="wrap_content"
@@ -109,14 +108,14 @@
 				android:shadowRadius="5"
 				android:layout_margin="10dp"
 				android:layout_marginTop="20dp"
-				android:textColor="#F0F0F0"/>
-			
-			
-			
+				android:textColor="#F0F0F0"
+				android:visibility="gone"/>
+
 			<View
 				android:background="?android:attr/dividerVertical"
 				android:layout_height="9dp"
-				android:layout_width="match_parent"/>
+				android:layout_width="match_parent"
+				android:visibility="gone"/>
 
 			<LinearLayout
 				android:id="@+id/fabLayout"

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:gravity="top|center">
+
+	<ImageView
+		android:layout_height="100dp"
+		android:layout_width="wrap_content"
+		android:src="@drawable/canvas_2"
+		android:scaleType="centerInside"
+		android:layout_margin="5dp"
+		android:layout_marginTop="35dp"/>
+
+	<ImageView
+		android:layout_height="100dp"
+		android:layout_width="wrap_content"
+		android:src="@drawable/canvas_1"
+		android:layout_margin="5dp"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="完结撒花 ✺◟(∗❛ัᴗ❛ั∗)◞✺"
+		android:textStyle="bold"
+		android:textSize="16sp"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_margin="15dp"
+		android:singleLine="false"
+		android:id="@+id/finallayoutTextView1"/>
+
+	<Button
+		style="?android:attr/buttonBarButtonStyle"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="回到画板"
+		android:id="@+id/finallayoutButton1"/>
+
+	<CheckBox
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="不再显示"
+		android:textColor="#8A8A8A"
+		android:textStyle="bold"
+		android:textSize="13sp"
+		android:id="@+id/finallayoutCheckBox1"/>
+
+</LinearLayout>
+

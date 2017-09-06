@@ -44,6 +44,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
 import com.edplan.bilipixeldraw.layers.AnimaLayer;
+import com.edplan.bilipixeldraw.layers.BiliCanvasLayer;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 	
 	BiliChangeRecorder changeRecorder;
 
-	private BitmapPartLayer defLayer;
+	private BiliCanvasLayer defLayer;
 
 	private ColorFieldLayer cfl;
 
@@ -237,7 +238,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 		
 		
 		
-		defLayer=new BitmapPartLayer();
+		defLayer=new BiliCanvasLayer();
+		//new BitmapPartLayer();
 		ldw.addLayer(defLayer);
 		
 		
@@ -253,7 +255,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 		{
 			Log.e("decode",e.getMessage(),e);
 		}*/
-		defLayer.setBitmap(bbp.bitmap);
+		//defLayer.setBitmap(bbp.bitmap);
+		defLayer.setBiliBitmapParser(bbp);
 		defLayer.setBitmapCenter(10, 10);
 		defLayer.setZoomTimes(1080f/50);
 		defLayer.setBackgroundColor(0xff000000);
@@ -281,7 +284,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 		
 		setUpChangeRecorder();
 		
+		
+		
+		checkFinal();
+		
     }
+	static final String final_key="final_done";
+	public void checkFinal(){
+		if(StaticM.getString(final_key)!=final_key){
+			Intent i=new Intent();
+			i.setAction("com.edplan.summerpixeldraw.final");
+			startActivity(i);
+		}else{
+			
+		}
+	}
 	
 	
 	WebView web;
@@ -813,7 +830,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 		if(!outPutFile.exists()){
 			outPutFile.createNewFile();
 		}
-		defLayer.getBitmap().compress(Bitmap.CompressFormat.PNG,100,new FileOutputStream(outPutFile));
+		bbp.bitmap.compress(Bitmap.CompressFormat.PNG,100,new FileOutputStream(outPutFile));
 		return outPutFile;
 	}
 	

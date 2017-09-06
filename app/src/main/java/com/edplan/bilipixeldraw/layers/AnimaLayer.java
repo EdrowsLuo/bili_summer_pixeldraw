@@ -89,6 +89,8 @@ public class AnimaLayer extends Layer
 		}
 		
 		alpha=1-((float)(System.currentTimeMillis()-e.startTime))/e.duration;
+		if(alpha<0)alpha=0;
+		if(alpha>1)alpha=1;
 		r=/*layer.getWidthPerPixel()*/ StaticM.dip2px(5) *(1f-alpha)*2;
 		animaPaint.setARGB(255,80,80,80);
 		//255,255-Color.red(e.color),255-Color.green(e.color),255-Color.blue(e.color));

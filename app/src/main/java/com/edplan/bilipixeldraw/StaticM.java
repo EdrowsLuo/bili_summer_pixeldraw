@@ -20,6 +20,11 @@ public class StaticM
 		view=viewr;
 	}
 	
+	public static Activity getContext(){
+		return context;
+	}
+	
+	
 	public static void putString(String key,String s){
 		getMainSharedPreferences().edit().putString(key,s).apply();
 	}
